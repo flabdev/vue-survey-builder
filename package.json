@@ -1,0 +1,25 @@
+{
+  "name": "vue-survey-builder",
+  "version": "0.0.1",
+  "description": "A survey builder component for vue.js applications",
+  "main": "vue-survey-builder.vue",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FissionHQ/vue-survey-builder.git"
+  },
+  "keywords": [
+    "vue",
+    "vue-survey-builder",
+    "survey-builder",
+    "survey"
+  ],
+  "author": "rajeshwar.patlolla@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FissionHQ/vue-survey-builder/issues"
+  },
+  "homepage": "https://github.com/FissionHQ/vue-survey-builder#readme"
+}
