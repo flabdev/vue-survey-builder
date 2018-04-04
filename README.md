@@ -20,4 +20,4 @@ Read [guidelines for contributing](https://help.github.com/articles/setting-guid
 - Improving the object structure
 
 ### License
-Read our license [here](https://github.com/FissionHQ/vue-survey-builder/blob/master/LICENSE.json)
+Read our license [here](https://github.com/FissionHQ/vue-survey-builder/blob/master/LICENSE.md)

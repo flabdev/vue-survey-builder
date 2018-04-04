@@ -1,0 +1,33 @@
+{
+  "id": null,
+  "question": null,
+  "type": null,
+  "multiSelect": false,
+  "characterLimited": false,
+  "hasMinMax": false,
+  "allowDecimals": false,
+  "isSkippable": true,
+  "sequence": null,
+  "minValue": 1,
+  "maxValue": 8,
+  "defaultValue": null,
+  "labels": [],
+  "dateFormat": "mm/dd/yy",
+  "timeFormat": "12",
+  "showDate": true,
+  "showTime": true,
+  "intervals": 5,
+  "textLimit": 1024,
+  "placeholder": null,
+  "units": null,
+  "options": [
+    {
+      "body": null,
+      "sequence": 1
+    },
+    {
+      "body": null,
+      "sequence": 2
+    }
+  ]
+}
