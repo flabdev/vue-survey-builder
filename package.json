@@ -1,8 +1,8 @@
 {
   "name": "vue-survey-builder",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A survey builder component for vue.js applications",
-  "main": "vue-survey-builder.vue",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
