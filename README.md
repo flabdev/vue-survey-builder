@@ -6,6 +6,7 @@ You can install the component using `npm i -S vue-survey-builder`
 
 ### Demo
 You can see the demo [here](http://vue-survey-builder.s3-website-us-east-1.amazonaws.com/#/)
+
 Please look at the souce code of the demo [here](https://github.com/rajeshwarpatlolla/vue-survey-builder-test)
 
 ### Steps to use
@@ -30,10 +31,10 @@ It emits an event called `add-update-question` with a question object and the ty
 In your component, keep track of this event to capture it
 ````
 mounted() {
-    this.$root.$on('add-update-question', question => {
-      window.console.log(question);
-    });
-  },
+  this.$root.$on('add-update-question', question => {
+    window.console.log(question);
+  });
+},
 ````
 When you get the object, you can cross check for the `id`, in the list of questions you have. If the `id` exists, then it means there is an update to the question, if the `id` doesn't exist, then you can directly add the question to the list of questions.
 You can refer the sample code in the [demo repository](https://github.com/rajeshwarpatlolla/vue-survey-builder-test/blob/master/src/components/TestSurveyBuilder.vue#L30)
@@ -81,11 +82,10 @@ You can use it like
 
 ### Versions
 #### 0.1.0
-This version is the initial official release of this component. It has all the required functionalities to build the surveys using vue.js
+This version is the initial release of this open source project. It has all the required functionalities to build the surveys using vue.js
 
 ### To Do
 - Support for rating question
-- Improve JSON
 - Introduce drag and drop
 
 ### Organisation
