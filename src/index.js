@@ -1,4 +1,4 @@
-import surveyBuilder from './SurveyBuilder';
+import SurveyBuilder from './SurveyBuilder';
 import QuestionsList from './QuestionsList';
 
-export default { surveyBuilder, QuestionsList };
+export default { SurveyBuilder, QuestionsList };

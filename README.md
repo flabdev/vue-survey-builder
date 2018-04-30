@@ -4,21 +4,23 @@ This is a survey builder component for vue.js applications.
 ### How to install
 You can install the component using `npm i -S vue-survey-builder`
 
+### Demo
+You can see the demo [here](http://vue-survey-builder.s3-website-us-east-1.amazonaws.com/#/)
+
+### Demo Source Code
+Please look at the sample code [here](https://github.com/rajeshwarpatlolla/vue-survey-builder-test)
+
 ### Steps to use
 *Step 1:*
-Install is using the above command from npm registry
-There are two components,
-1. **SurveyBuilder**: You can use this to build the survey.
-2. **QuestionsView**: You can use this to view the list of questions added.
+Once you it install, you can import the `SurveyBuilder` by
 
-You can import them using
-
-`import { SurveyBuilder } from 'SurveyBuilder';`
-
-`import { QuestionsView } from 'SurveyBuilder';`
+`import SurveyBuilder from 'SurveyBuilder';`
 
 *Step 2:*
-We are using [this JSON]() to build any type of question. Depending on the type of question, only few keys are used in the whole JSON.
+We are using [this JSON](https://github.com/FissionHQ/vue-survey-builder/blob/master/src/survey-builder.json) to build any type of question. Depending on the type of question, only few keys are used in the whole JSON.
+
+*Step 3:*
+
 
 ### Keys of the JSON
 - **id** : This is a unique field, which will be created dynamically for every qiestion. This field is required for all type of questions.
@@ -47,12 +49,6 @@ We are using [this JSON]() to build any type of question. Depending on the type 
 - TEXT
 - DATE
 - TIME
-
-### Demo
-You can see the demo [here]()
-
-### Demo Source Code
-Please look at the sample code [here]()
 
 ### Versions
 #### 0.1.0
