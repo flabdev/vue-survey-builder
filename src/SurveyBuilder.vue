@@ -90,15 +90,13 @@
       <div class="" v-if="selectedType === 'SINGLE_CHOICE'">
         <div class="vsb-choices-text">Answer Choices</div>
         <div class="" v-for="(option, index) in question.options" :key="index">
-          <div class="">
-            <input type="text" class="" placeholder="Enter an answer choice" v-model="option.body">
-          </div>
-          <div class="">
-            <button class="" v-on:click="deleteQuestionOptionItem(question.options, index)" v-if="index > 1">Remove</button>
+          <div class="clear-both">
+            <input type="text" class="width-90 float-left" placeholder="Enter an answer choice" v-model="option.body">
+            <button class="vsb-btn-link color-red width-10 mt-10" v-on:click="deleteQuestionOptionItem(question.options, index)" v-if="index > 1">Remove</button>
           </div>
         </div>
-        <div class="vsb-add-answer-btn vsb-btn-link color-blue">
-          <a v-on:click="addAnotherAnswer()">Add another answer</a>
+        <div class="display-block">
+          <button class="vsb-btn-link color-blue" v-on:click="addAnotherAnswer()">Add another answer</button>
         </div>
       </div>
       <div class="" v-if="selectedType === 'TEXT'">
@@ -229,7 +227,7 @@ export default {
      */
     saveQuestion(question) {
       question.id = question.id ? question.id : this.getGUID(); // eslint-disable-line
-      this.$root.$emit('add-update-question', { question, operation: 'save' });
+      this.$root.$emit('add-update-question', question);
       this.question = { type: 'DEFAULT' };
     },
 

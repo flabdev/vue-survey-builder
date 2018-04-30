@@ -17,10 +17,53 @@ Once you it install, you can import the `SurveyBuilder` by
 `import SurveyBuilder from 'SurveyBuilder';`
 
 *Step 2:*
-We are using [this JSON](https://github.com/FissionHQ/vue-survey-builder/blob/master/src/survey-builder.json) to build any type of question. Depending on the type of question, only few keys are used in the whole JSON.
+Then you can use it in your vue component like this
+
+`<SurveyBuilder :options="sampleQuestion" />`
+
+Here `sampleQuestion` can be the json, which is [here](https://github.com/FissionHQ/vue-survey-builder/blob/master/src/survey-builder.json)
+
+This is used to create a new question.
 
 *Step 3:*
+We are using [this JSON](https://github.com/FissionHQ/vue-survey-builder/blob/master/src/survey-builder.json) to build any type of question. Depending on the type of question, only few keys are used in the whole JSON.
 
+It emits an event called `add-update-question` with a question object and the type
+`this.$root.$emit('add-update-question', question);`
+
+In your component, keep track of this event to capture it
+````
+mounted() {
+    this.$root.$on('add-update-question', question => {
+      window.console.log(question);
+    });
+  },
+````
+When you get the object, you can cross check for the `id`, in the list of questions you have. If the `id` exists, then it means there is an update to the question, if the `id` doesn't exist, then you can directly add the question to the list of questions.
+You can refer the sample code in the [demo repository](https://github.com/rajeshwarpatlolla/vue-survey-builder-test/blob/master/src/components/TestSurveyBuilder.vue#L30)
+
+*Step 4:*
+You can add your own logic in your component to show the list of question in read only and edit mode. There is a component to show the list of questions, which will be available in the [src folder](https://github.com/FissionHQ/vue-survey-builder/blob/master/src/QuestionsView.vue) itself. Please use it in case, if you want to show the questions added.
+
+In the next version, this component will be available as part of the vue-survey-builder itself. Refer demo code [here](https://github.com/rajeshwarpatlolla/vue-survey-builder-test/blob/master/src/components/TestSurveyBuilder.vue#L5)
+
+You can use it like
+
+`<QuestionsView :questions="questionsList" :readOnly="true" />`
+
+- `questions` is a property which takes an array of questions.
+
+- `readOnly` is used to make the whole component editable or non editable, based on the value we pass. It takes true or false.
+
+### Supported Question types
+- BOOLEAN
+- SINGLE_CHOICE
+- MULTI_CHOICE
+- SCALE
+- NUMBER
+- TEXT
+- DATE
+- TIME
 
 ### Keys of the JSON
 - **id** : This is a unique field, which will be created dynamically for every qiestion. This field is required for all type of questions.
@@ -40,16 +83,6 @@ We are using [this JSON](https://github.com/FissionHQ/vue-survey-builder/blob/ma
 - **units** : This represents the units to be shown. This field will be used for `NUMBER` type of questions.
 - **options** : This represents the options of question. This field is used by `SINGLE_CHOICE` and `MULTI_CHOICE` questions.
 
-### Supported Question types
-- BOOLEAN
-- SINGLE_CHOICE
-- MULTI_CHOICE
-- SCALE
-- NUMBER
-- TEXT
-- DATE
-- TIME
-
 ### Versions
 #### 0.1.0
 This version is the initial official release of this component. It has all the required functionalities to build the surveys using vue.js
@@ -66,4 +99,4 @@ This version is the initial official release of this component. It has all the r
 [Fission Labs](http://fissionlabs.com/)
 
 ### LICENSE
-Please read it [here]()
+Please read it [here](https://github.com/FissionHQ/vue-survey-builder/blob/master/LICENSE.md)
