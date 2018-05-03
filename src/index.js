@@ -1,4 +1,5 @@
 import SurveyBuilder from './SurveyBuilder';
-import QuestionsList from './QuestionsList';
+import QuestionsView from './QuestionsView';
+import SurveyBuilderJson from './survey-builder.json' ;
 
-export default { SurveyBuilder, QuestionsList };
+export { SurveyBuilder, QuestionsView, SurveyBuilderJson };
