@@ -13,12 +13,12 @@ Please look at the souce code of the demo [here](https://github.com/rajeshwarpat
 **Step 1:**
 Once you it install, you can import the `SurveyBuilder` as shown below
 
-`import SurveyBuilder from 'SurveyBuilder';`
+`import { SurveyBuilder, SurveyBuilderJson } from 'vue-survey-builder';`
 
 **Step 2:**
 Then you can use it in your vue component, as shown below
 
-`<SurveyBuilder :options="sampleQuestion" />`
+`<SurveyBuilder :options="SurveyBuilderJson" />`
 
 Here `sampleQuestion` can be the json, which is [here](https://github.com/FissionHQ/vue-survey-builder/blob/master/src/survey-builder.json)
 
@@ -42,9 +42,11 @@ You can refer the sample code in the [demo repository](https://github.com/rajesh
 **Step 4:**
 You can add your own logic in your component to show the list of question in read only and edit mode. There is a component to show the list of questions, which will be available in the [demo source code](https://github.com/FissionHQ/vue-survey-builder/blob/master/src/QuestionsView.vue). Please use this component called `QuestionsView` in case, you want to show the list of questions added.
 
-In the next version, this component will be available as part of the vue-survey-builder itself. Refer demo code [here](https://github.com/rajeshwarpatlolla/vue-survey-builder-test/blob/master/src/components/TestSurveyBuilder.vue#L5)
+You can import it like,
 
-You can use it like
+`import { QuestionsView } from 'vue-survey-builder';`
+
+and then use it like,
 
 `<QuestionsView :questions="questionsList" :readOnly="true" />`
 
@@ -83,6 +85,13 @@ You can use it like
 ### Versions
 #### 0.1.0
 This version is the initial release of this open source project. It has all the required functionalities to build the surveys using vue.js
+
+### To Do
+- Support for rating question
+- Introduce drag and drop
+
+#### 0.2.0
+From this version you can import both `SurveyBuilder` and  `QuestionsView` from `vue-survey-builder`.
 
 ### To Do
 - Support for rating question
