@@ -14,7 +14,8 @@
     "vue",
     "vue-survey-builder",
     "survey-builder",
-    "survey"
+    "survey",
+    "vue.js"
   ],
   "author": "rajeshwar.patlolla@gmail.com",
   "license": "MIT",

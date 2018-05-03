@@ -11,24 +11,23 @@ Please look at the souce code of the demo [here](https://github.com/rajeshwarpat
 
 ### Steps to use
 **Step 1:**
-Once you it install, you can import the `SurveyBuilder` as shown below
+Once you install it, you can import the `SurveyBuilder` as shown below
 
 `import { SurveyBuilder, SurveyBuilderJson } from 'vue-survey-builder';`
 
 **Step 2:**
-Then you can use it in your vue component, as shown below
+You can use it in your vue component, as shown below
 
 `<SurveyBuilder :options="SurveyBuilderJson" />`
 
-Here `sampleQuestion` can be the json, which is [here](https://github.com/FissionHQ/vue-survey-builder/blob/master/src/survey-builder.json)
+Here `SurveyBuilderJson` is the json, which is used to form question object. Please take a look at it [here](https://github.com/FissionHQ/vue-survey-builder/blob/master/src/survey-builder.json)
 
-This is used to create a new question. We are using this JSON, to build any type of question. Depending on the type of question, only few keys are used in the whole JSON.
+Depending on the type of question, only few keys are used in the whole JSON.
 
 **Step 3:**
-It emits an event called `add-update-question` with a question object and the type
-`this.$root.$emit('add-update-question', question);`
+`SurveyBuilder` emits an event called `add-update-question` with a question object `this.$root.$emit('add-update-question', question);`
 
-In your component, keep track of this event to capture it
+In your component, keep track of this event to capture the question which is added or updated
 ````
 mounted() {
   this.$root.$on('add-update-question', question => {
@@ -36,17 +35,17 @@ mounted() {
   });
 },
 ````
-When you get the object, you can cross check for the `id`, in the list of questions you have. If the `id` exists, then it means there is an update to the question, if the `id` doesn't exist, then you can directly add the question to the list of questions.
+Each question will have an `id` which is a UUID field. Once you get the question object form the above event, you can check the `id` of with with the list of questions you have. If the `id` exists, then it means there is an update to the question, if the `id` doesn't exist, then you can directly add that question to the list of questions.
 You can refer the sample code in the [demo repository](https://github.com/rajeshwarpatlolla/vue-survey-builder-test/blob/master/src/components/TestSurveyBuilder.vue#L30)
 
 **Step 4:**
-You can add your own logic in your component to show the list of question in read only and edit mode. There is a component to show the list of questions, which will be available in the [demo source code](https://github.com/FissionHQ/vue-survey-builder/blob/master/src/QuestionsView.vue). Please use this component called `QuestionsView` in case, you want to show the list of questions added.
+You can add your own logic in your component to show the list of question in read only and edit mode. There is a component called `QuestionsView`, to show the list of questions, which is available [here](https://github.com/FissionHQ/vue-survey-builder/blob/master/src/QuestionsView.vue). Please use this component `QuestionsView` in case, you want to show the list of questions added.
 
-You can import it like,
+You can import this component as shown below
 
 `import { QuestionsView } from 'vue-survey-builder';`
 
-and then use it like,
+Once you import it, you can use it in your component as shown below
 
 `<QuestionsView :questions="questionsList" :readOnly="true" />`
 
@@ -86,12 +85,8 @@ and then use it like,
 #### 0.1.0
 This version is the initial release of this open source project. It has all the required functionalities to build the surveys using vue.js
 
-### To Do
-- Support for rating question
-- Introduce drag and drop
-
 #### 0.2.0
-From this version you can import both `SurveyBuilder` and  `QuestionsView` from `vue-survey-builder`.
+This version exports `SurveyBuilder`, `QuestionsView` and `SurveyBuilderJson` from index.js file.
 
 ### To Do
 - Support for rating question
