@@ -93,8 +93,6 @@ export default {
       this.selectedQuestion = { id: null };
     });
   },
-  computed: {},
-  watch: {},
   methods: {
     editQuestion(question, index) {
       this.selectedQuestion = JSON.parse(JSON.stringify(question));

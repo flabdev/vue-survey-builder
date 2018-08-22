@@ -141,21 +141,10 @@ export default {
     };
   },
   props: ['options'],
-  computed: {},
-  watch: {},
-  beforeCreate() {},
-  created() {},
-  beforeMount() {},
   mounted() {
     this.question.type = this.question.type ? this.question.type : 'DEFAULT';
     this.selectedType = this.question.type;
-
-    window.console.log(this.question, this.selectedType);
   },
-  beforeUpdate() {},
-  updated() {},
-  beforeDestroy() {},
-  destroyed() {},
   methods: {
     /**
      * @desc {String} type
