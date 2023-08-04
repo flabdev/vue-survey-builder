@@ -88,8 +88,10 @@ This version is the initial release of this open source project. It has all the 
 #### 0.2.0
 This version exports `SurveyBuilder`, `QuestionsView` and `SurveyBuilderJson` from index.js file.
 
+#### 0.3.0
+This version improves the UI of the survey builder and question view components.
+
 ### To Do
-- Support for rating question
 - Introduce drag and drop
 
 ### Organisation
