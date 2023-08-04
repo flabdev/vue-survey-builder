@@ -8,14 +8,14 @@
         <div class="row">
           <div class="p-0">
             <div class="question-section">
-              <p class="question_color">Question
+              <p class="question_number">Question
                 <span class="">{{ index + 1 }}:</span>
               </p>
               <p class="question_body">{{question.body}}</p>
             </div>
             <div class="answer-section">
               <div class="option-section" v-if="question.type === 'BOOLEAN'">
-                <div class="" v-for='(option, index) in question.options' :key="index">
+                <div class="" v-for='(option, index) in question?.options' :key="index">
                   <p class="radio-option">
                     <input type="radio" name="boolean_type" :disabled="readOnly">
                     <label>{{option.body}}</label>
@@ -76,7 +76,7 @@
 <script>
 // import _ from 'lodash';
 import vueSlider from 'vue-slider-component';
-import SurveyBuilder from './SurveyBuilder';
+import SurveyBuilder from './SurveyBuilder.vue';
 
 export default {
   name: 'QuestionsView',
@@ -88,8 +88,7 @@ export default {
   props: ['questions', 'readOnly'],
   components: { SurveyBuilder, vueSlider },
   mounted() {
-    this.$root.$on('selected-question', obj => {
-      window.console.log(obj);
+    this.$root.$on('selected-question', (obj) => {
       this.selectedQuestion = { id: null };
     });
   },
@@ -99,7 +98,7 @@ export default {
       this.selectedQuestion.questionNumber = index + 1;
     },
     deleteQuestion(question, index) {
-      this.questions.splice(index, 1);
+      this.questions.splice(index, 1);  //  eslint-disable-line
     },
   },
 };
@@ -130,10 +129,12 @@ h3 {
 .question_body {
   word-break: break-all;
   color: #555;
+  font-weight: 500;
+  font-size: 16px;
 }
 
 .read-only-question {
-  background-color: #fafafa;
+  // background-color: #fafafa;
 }
 
 .icon-style {
@@ -253,12 +254,21 @@ button {
 }
 
 .card {
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  padding: 12px;
-  margin-bottom: 12px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 4px;
+  padding: 16px;
+  margin-bottom: 16px;
+  &:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
 }
 
-.question_color,
+.question_number {
+  color: #555;
+  font-size: 16px;
+  font-weight: 500;
+}
+
 input {
   color: #555;
   font-size: 16px;
